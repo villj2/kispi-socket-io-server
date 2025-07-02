@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1483db81-ea77-4d2b-964b-54d7624de41f/resourceGroups/Paraverse/providers/Microsoft.Web/sites/paraverse-socket-io-demo",
+    "appService.deploySubpath": "."
+}
