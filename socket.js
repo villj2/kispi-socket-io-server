@@ -68,7 +68,7 @@ module.exports = function initializeSocketIO(server) {
     auth: {
       type: "basic",
       username: "admin",
-      password: "$2a$10$b2YGU2pgQI.V8qhEMJp5/.fyqL76pnG7q7PswOVULnJhUDX3EVyNu", // Hashed password (bcrypt) -> See Bitwarden
+      password: "$2a$12$4GpZBlh55kD7Xc/NpvZk0e3vM/4xg37ZNpqZYIgIJethm1CXcORGe", // Hashed password (bcrypt) -> See Bitwarden
     },
     mode: "development",
     allowRequest: (req, callback) => {
