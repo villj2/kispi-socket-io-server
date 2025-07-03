@@ -41,21 +41,14 @@ module.exports = function initializeSocketIO(server) {
 
     socket.to(room).emit('client connected', socket.id);
 
-    socket.on('chat message', (msg, room) => {
-        console.log('chat message: ' + msg + ' to room: ' + room);
-        //io.emit('chat message', msg);
-        //socket.broadcast.emit('chat message', msg);
-        socket.to(room).emit('chat message', msg);
-    });
-
     socket.on('disconnect', () => {
       console.log('user disconnected with id: ' + socket.id);
-      //socket.to(room).emit('chat message', 'Client with left with ID: ' + socket.id);
       socket.to(room).emit('client disconnected', socket.id);
     });
 
-    socket.on('sendData', (data) => {
-      socket.to(room).emit('sendData', data);
+    socket.on('message', (data, room) => {
+      console.log("data: " + data + ' to room: ' + room);
+      socket.to(room).emit('message', data);
     });
 
   });
