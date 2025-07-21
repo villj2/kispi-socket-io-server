@@ -51,6 +51,11 @@ module.exports = function initializeSocketIO(server) {
       socket.to(room).emit('message', data);
     });
 
+    socket.on('binarydata', (data) => {
+      console.log("Received Bytearray:", data);
+      socket.to(room).emit('binarydata', data);
+    });
+    
   });
 
   io._nsps.forEach((value, key) => {
