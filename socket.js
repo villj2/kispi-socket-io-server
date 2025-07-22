@@ -55,6 +55,11 @@ module.exports = function initializeSocketIO(server) {
       console.log("Received Bytearray:", data);
       socket.to(room).emit('binarydata', data);
     });
+
+    socket.on('streamingdata', (data, length) => {
+      console.log("Received streaming Bytearray:", data, length);
+      socket.to(room).emit('streamingdata', data, length);
+    });
     
   });
 
